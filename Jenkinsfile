@@ -8,5 +8,14 @@ pipeline {
                 '''
             }
         }
+
+        stage("Test") {
+            when {
+                branch "fix-*"
+            }
+            steps {
+                sh "echo README.md"
+            }
+        }
     }
 }
